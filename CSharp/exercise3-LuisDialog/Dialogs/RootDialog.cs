@@ -42,8 +42,8 @@
             result.TryFindEntity("category", out categoryEntityRecommendation);
             result.TryFindEntity("severity", out severityEntityRecommendation);
 
-            this.category = ((Newtonsoft.Json.Linq.JArray)categoryEntityRecommendation?.Resolution["values"])?[0]?.ToString();
-            this.severity = ((Newtonsoft.Json.Linq.JArray)severityEntityRecommendation?.Resolution["values"])?[0]?.ToString();
+            this.category = ((List<object>)categoryEntityRecommendation?.Resolution["values"])?[0]?.ToString();
+            this.severity = ((List<object>)severityEntityRecommendation?.Resolution["values"])?[0]?.ToString();
             this.description = result.Query;
 
             await this.EnsureTicket(context);
