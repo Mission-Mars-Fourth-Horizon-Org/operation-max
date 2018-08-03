@@ -253,4 +253,4 @@ paket-files/
 
 #nodejs files
 *.env
-
+*package-lock.json
