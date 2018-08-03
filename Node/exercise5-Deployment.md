@@ -18,31 +18,30 @@ The following software is required for completing this exercise:
 
 In this task you will generate an _App ID_ and _App Password_, and register your bot.
 
-1. Sign in to the [Bot Framework Portal](https://dev.botframework.com).
+1. In the Azure Portal Click on + Create new resource and Search for "Bot Channels Registration". Click "Create"
+![Create Bot Channels Registration](./images/exercise5-botchannelreg1.png)
 
-1. Click the **My bots** button and next click the **Create a bot** button (if you have other bots) or the **Register** buton.
+2. Fill the form. 
 
-1. Upload the [logo.png](../assets/logo.png) as **Custom Icon**.
+Provide a public display name of your Bot (you can change it later).
 
-1. Type _Help Desk Bot_ as **Display Name**. Enter a globally unique App Name in the **Bot Handle**.
+Select the Pricing Tier as F0. You can set the messaging point as "https://helpdeskbot-samsungv1.azurewebsites.net/api/messages" (You can change it later).
 
-1. For **Long Description** you can enter _This bot will try to help you to solve common issues and can raise tricky ones as tickets_. This is the description that will appear in search results, so it should accurately describe what the bot does.
+Turn off the Application Insights and Let the AppId and Password stay as "Auto create AppId and Password".
 
-    ![exercise5-botname](./images/exercise5-botname.png)
+ ![Bot Channels Registration Form](./images/exercise5-botchannelreg2.png)
 
-1. On the **Configuration** section, click on the **Create Microsoft AppID and Password** button and a new page should open. If required, sign in again with the same credentials you use in the Bot Framework portal. In this page, you should see the App name you have entered previously and an **App ID** which was automatically generated. Save the **App ID** for later and click on the **Generate an app password to continue**.
+ 3. Retrieve the AppID and Password.
 
-    ![exercise5-generateappid](./images/exercise5-generateappid.png)
+ Go to the newly created Bot Channel Registration resource and click on Settings. Click on Microsoft AppId (Manage) Link
 
-1. You should see a popup which contains an automatically generated password for your bot. Notice that this is the only time it will be displayed. **Store it securely** for later. Click **Ok** to close the popup.
+ ![Microsoft App ID Manage](./images/exercise5-botchannelreg3.PNG)
 
-    ![exercise5-generatepassword](./images/exercise5-generatepassword.png)
 
-1. Click on the **Finish and go back to Bot Framework** button. You may notice the page will close and you will go back to the Bot registration page. Now, you have the _App ID_ auto-completed in the page.
 
-1. Scroll down and confirm your agreement of the _Terms of Use, Privacy Statement, and Code of Conduct_. Click on the _Register_ button. A confirmation message should appear, click *Ok*. And next you should see your bot's dashboard with a few channels available.
+This will open a new page, which will show your appname and its id. Click on "Generate new password" under Application Secrets". Copy and keep the generated password with you. This password can be seen only once, you can regenerate passwords later as well.
 
-    ![exercise5-botchannels](./images/exercise5-botchannels.png)
+ ![Microsoft App ID and Password](./images/exercise5-getappidpassword.PNG)
 
 ## Task 2: Create an Azure Web App
 
@@ -117,11 +116,11 @@ In this task you will publish your code to Git Repository and this will deploy y
 
 ## Task 4: Update Your Bot Configuration
 
-1. Navigate to [Bot Framework Portal](https://dev.botframework.com). Click on your bot name to edit it.
+1. Navigate to the Azure Boot channel Registration Resource. 
 
-1. Click on the **Settings** button on the top-right corner of the page.
+1. Click on the **Settings** button on the left hand side Menu under **Bot Management**
 
-1. On the _Configuration_ section, type the _App Service URL_ you created on Task 2 (eg. https://help-desk-bot.azurewebsites.net/api/messages). Remember to put the `/api/messages` at the end of the URL and ensure the protocol is **https**. Click the **Save changes** button at the bottom of the page.
+1. On the _Configuration_ section, type the _Messaging endpoint_ you created on Task 2 (eg. https://help-desk-bot.azurewebsites.net/api/messages). Remember to put the `/api/messages` at the end of the URL and ensure the protocol is **https**. Click the **Save changes** button at the bottom of the page.
 
     ![exercise5-botconfiguration](./images/exercise5-botconfiguration.png)
 
@@ -129,11 +128,11 @@ In this task you will publish your code to Git Repository and this will deploy y
 
 In this task you will test your bot from other channels.
 
-1. Navigate to [Bot Framework Portal](https://dev.botframework.com) and edit your bot, if you are not there already.
+1. Navigate to Azure Bot Channel Registration Resource.
 
-1. Click on the **Test** button on the top-right corner of the page. It should open a new window on the right of the page. This is an embedded _Web Chat Channel_ so you can easily test your bot.
+1. Click on the **Test in Web Chat** button on the Left hand side **BOT MANAGEMENT** Menu. It should open a new window on the right of the page. This is an embedded _Web Chat Channel_ so you can easily test your bot.
 
-1. Type `Hi! I want to explore the knowledge base` and see the bot response with the category list. Click on any of the category and see the articles listed for that category and click on one article to see it.
+1. Type `Hi! I want to explore the knowledge base` and see the bot response with the category list. 
 
     ![exercise5-testwebchannel](./images/exercise5-testwebchannel.png)
 

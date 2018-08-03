@@ -27,6 +27,8 @@ var connector = new builder.ChatConnector({
 // Listen for messages from users
 server.post('/api/messages', connector.listen());
 
+var inMemoryStorage = new builder.MemoryBotStorage();
+
 var bot = new builder.UniversalBot(connector, [
     (session, args, next) => {
         session.send('Hi! I\'m the help desk bot and I can help you create a ticket.');
@@ -78,7 +80,7 @@ var bot = new builder.UniversalBot(connector, [
             session.endDialog('Ok. The ticket was not created. You can start again if you want.');
         }
     }
-]);
+]).set('storage', inMemoryStorage);
 
 const createCard = (ticketId, data) => {
     var cardTxt = fs.readFileSync('C:/projects/help-desk-bot-lab/Node/exercise2-TicketSubmissionDialog/cards/ticket.json', 'UTF-8');

@@ -19,8 +19,10 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
+var inMemoryStorage = new builder.MemoryBotStorage();
+
 var bot = new builder.UniversalBot(connector, [
     (session, args, next) => {
         session.send('You said: ' + session.message.text + ' which was ' + session.message.text.length + ' characters');
     }
-]);
+]).set('storage', inMemoryStorage);

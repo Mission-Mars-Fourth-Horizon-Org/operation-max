@@ -4,7 +4,7 @@ const restify = require('restify');
 module.exports = (config) => {
     return (query, callback) => {
         const client = restify.createJsonClient({
-            url: `https://westus.api.cognitive.microsoft.com`,
+            url: `https://southeastasia.api.cognitive.microsoft.com`,
             headers: {
                 'Ocp-Apim-Subscription-Key': config.apiKey
             }

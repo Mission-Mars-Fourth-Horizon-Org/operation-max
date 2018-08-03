@@ -40,7 +40,8 @@ In this task you will create a Cosmos DB database and upload some documents that
 
     ![exercise4-documentdb-addcollection](./images/exercise4-documentdb-addcollection.png)
 
-1. Select **Document Explorer** on the left, and next click on the **Upload** button.
+1. Select **Document Explorer** on the left, Select your database and click on the **Open full Screen** button.
+![exercise4-documentdb-open](./images/exercise4-documentdb-openexplorer.png)
 
 1. On the opened window pick up all the files in the [assets/kb](../assets/kb) folder. Each one represents an article from the Knowledge base. Click **Upload**. Do not close the browser.
 
