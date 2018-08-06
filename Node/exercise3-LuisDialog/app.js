@@ -6,7 +6,7 @@ const builder = require('botbuilder');
 const ticketsApi = require('./ticketsApi');
 
 
-const listenPort = process.env.port || process.env.PORT || 3978;
+const listenPort = process.env.port || 3978;
 const ticketSubmissionUrl = process.env.TICKET_SUBMISSION_URL || `http://localhost:${listenPort}`;
 
 // Setup Restify Server
