@@ -74,44 +74,6 @@ Yeoman prompts you for some information with which to create your bot.
 
 Thanks to the template, your project contains all of the code that's necessary to create the bot in this quickstart. You won't actually need to write any additional code.
 
-## Start your bot
-
-The code below has three main sections:
-     * Creating the chat connector using the ChatConnector class
-     * Using the connector in a Restify route to listen for messages
-     * Adding the code using the UniversalBot class to reply to the user
-
-    The Bot Builder SDK for Node.js provides the UniversalBot and ChatConnector classes for configuring the bot to send and receive messages through the Bot Framework Connector. The UniversalBot class forms the brains of your bot. It's responsible for managing all the conversations your bot has with a user. The ChatConnector connects your bot to the Bot Framework Connector Service. The Connector also normalizes the messages that the bot sends to channels so that you can develop your bot in a platform-agnostic way, allowing you to focus your attention on the business logic, rather than on the eventual channel a user might use.
-
-    Add the following code to `app.js`:
-
-    ``` javascript
-    require('dotenv').config();
-    const restify = require('restify');
-    const builder = require('botbuilder');
-
-    // Setup Restify Server
-    var server = restify.createServer();
-    server.listen(process.env.port || process.env.PORT || 3978, () => {
-        console.log('%s listening to %s', server.name, server.url);
-    });
-
-    // Create chat connector for communicating with the Bot Framework Service
-    var connector = new builder.ChatConnector({
-        appId: process.env.MICROSOFT_APP_ID,
-        appPassword: process.env.MICROSOFT_APP_PASSWORD
-    });
-
-    // Listen for messages from users
-    server.post('/api/messages', connector.listen());
-
-    // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
-    var bot = new builder.UniversalBot(connector, [
-        (session, args, next) => {
-            session.send('You said: ' + session.message.text + ' which was ' + session.message.text.length + ' characters');
-        }
-    ]);
-    ```
 
 ## Task 2: Start & Test the Bot
 
