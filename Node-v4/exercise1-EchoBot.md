@@ -72,7 +72,7 @@ Yeoman prompts you for some information with which to create your bot.
 * Choose the language for your bot, either JavaScript or TypeScript.
 * Choose the Echo template.
 
-  ![exercise1-echo-bot](./images/exercise1-echo-bot-console.png)
+  ![exercise1-echo-bot-console](./images/exercise1-echo-bot-console.png)
 
 Thanks to the template, your project contains all of the code that's necessary to create the bot in this quickstart. You won't actually need to write any additional code.
 
