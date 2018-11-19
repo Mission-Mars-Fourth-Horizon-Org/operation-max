@@ -48,9 +48,11 @@ server.get(/\/?.*/, restify.serveStatic({
     default: 'default.htm'
 }));
 
+var inMemoryStorage = new builder.MemoryBotStorage();
+
 var bot = new builder.UniversalBot(connector, (session, args, next) => {
     session.endDialog(`I'm sorry, I did not understand '${session.message.text}'.\nType 'help' to know more about me :)`);
-});
+}).set('storage',inMemoryStorage);
 
 // create router and command middleware
 const handOffRouter = new HandOffRouter(bot, (session) => {
